@@ -80,6 +80,30 @@ const simpleDecrypt = (
   }
 };
 
+const storeDLT = (host, port, payload, path = '/core/storeDLT') => {
+  try {
+    return axios.post(host + ':' + port + path, payload);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const storeKfrags = (host, port, payload, path = '/core/storeKfrags') => {
+  try {
+    return axios.post(host + ':' + port + path, payload);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const getCfrags = (host, port, payload, path = '/core/getCfrags') => {
+  try {
+    return axios.post(host + ':' + port + path, payload);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const test = async () => {
   const plaintext = 'Hello World!';
 
@@ -167,4 +191,13 @@ const main = async () => {
   await testSignature();
 };
 
-main();
+module.exports = {
+  requestKeypair,
+  requestSigner,
+  sign,
+  verify,
+  encrypt,
+  generateKfrags,
+  reencrypt,
+  decrypt,
+};
