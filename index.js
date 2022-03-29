@@ -80,6 +80,16 @@ const simpleDecrypt = (
   }
 };
 
+//TODO
+const storeCapsule = (host, port, payload, path = '/core/storeCapsule') => {
+  try {
+    return axios.post(host + ':' + port + path, payload);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//TODO
 const storeDLT = (host, port, payload, path = '/core/storeDLT') => {
   try {
     return axios.post(host + ':' + port + path, payload);
@@ -88,6 +98,7 @@ const storeDLT = (host, port, payload, path = '/core/storeDLT') => {
   }
 };
 
+//TODO
 const storeKfrags = (host, port, payload, path = '/core/storeKfrags') => {
   try {
     return axios.post(host + ':' + port + path, payload);
@@ -96,6 +107,7 @@ const storeKfrags = (host, port, payload, path = '/core/storeKfrags') => {
   }
 };
 
+//TODO
 const getCfrags = (host, port, payload, path = '/core/getCfrags') => {
   try {
     return axios.post(host + ':' + port + path, payload);

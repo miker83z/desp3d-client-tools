@@ -9,6 +9,7 @@
   "author": "Mirko Zichichi <mikerz83@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.26.0"
+    "axios": "^0.26.0",
+    "poisson-process": "^1.0.1"
   }
 }
