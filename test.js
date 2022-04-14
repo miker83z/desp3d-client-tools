@@ -3,8 +3,8 @@ const poissonProcess = require('poisson-process');
 const fs = require('fs');
 
 const dirMain = 'outputDataset';
-const tests_number = 1;
-const cycles = 2;
+const tests_number = 3;
+const cycles = 1;
 const threshold = 3;
 const nodes_number = 3;
 const lambda = 1000; //ms
@@ -24,7 +24,7 @@ let alice = {
 let bobs = {
   host: 'http://127.0.0.1',
   port: 8022,
-  num: 3,
+  num: 6,
   dir: '',
   keypair: [],
   signer: [],
