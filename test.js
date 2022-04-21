@@ -2,10 +2,17 @@ const authapi = require('./index');
 const poissonProcess = require('poisson-process');
 const fs = require('fs');
 
+const commandLineArgs = require('command-line-args');
+const optionDefinitions = [
+  { name: 'bobs', alias: 'b', type: Number, defaultValue: 10 },
+  { name: 'threshold', alias: 't', type: Number, defaultValue: 3 },
+];
+const options = commandLineArgs(optionDefinitions);
+
 const dirMain = 'outputDataset';
 const tests_number = 3;
-const cycles = 1;
-const threshold = 3;
+const cycles = 5;
+const threshold = options.threshold;
 const nodes_number = 3;
 const lambda = 1000; //ms
 
@@ -24,7 +31,7 @@ let alice = {
 let bobs = {
   host: 'http://127.0.0.1',
   port: 8022,
-  num: 6,
+  num: options.bobs,
   dir: '',
   keypair: [],
   signer: [],

@@ -212,4 +212,5 @@ module.exports = {
   generateKfrags,
   reencrypt,
   decrypt,
+  simpleDecrypt,
 };

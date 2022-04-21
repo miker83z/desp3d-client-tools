@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.26.0",
+    "command-line-args": "^5.2.1",
     "poisson-process": "^1.0.1"
   }
 }
