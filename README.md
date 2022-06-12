@@ -1,10 +1,9 @@
-# Node-JS client for umbral-rs Web Service
+# desp3d-client-tools
 
 ## Install
 
 ```
 git clone
-cd umbral-rs-client
 npm install
 ```
 

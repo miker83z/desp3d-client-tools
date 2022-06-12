@@ -1,6 +1,6 @@
 {
-  "name": "umbral-rs-client",
-  "version": "0.1.0",
+  "name": "desp3d-client-tools",
+  "version": "0.8.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,13 @@
   "author": "Mirko Zichichi <mikerz83@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.8",
     "axios": "^0.26.0",
     "command-line-args": "^5.2.1",
-    "poisson-process": "^1.0.1"
+    "dlt-policy-manager": "^1.0.2-9",
+    "intelligible-identity": "^1.0.3-2",
+    "mco-policy-parser": "^1.0.1",
+    "poisson-process": "^1.0.1",
+    "web3": "^1.7.3"
   }
 }

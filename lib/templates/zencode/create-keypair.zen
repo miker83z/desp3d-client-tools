@@ -1,0 +1,5 @@
+rule check version 2.0.0
+Scenario 'ecdh': Create the keypair
+Given that I am known as 'DIDController'
+When I create the keypair
+Then print my data

@@ -1,0 +1,69 @@
+@prefix mco-ipre: <urn:mpeg:mpeg21:mco:ipre:2012#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix mvco:  <http://purl.oclc.org/NET/mvco.owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mco-core: <urn:mpeg:mpeg21:mco:core:2012#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mco-pane: <urn:mpeg:mpeg21:mco:pane:2015#> .
+@prefix mco-rele: <urn:mpeg:mpeg21:mco:rele:2015#> .
+@prefix dpv: <http://www.w3.org/ns/dpv#> .
+
+<did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_154>
+        a           dpv:DataProcessor ;
+        rdfs:label  "Data Processor" .
+
+<did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_156>
+        a           dpv:DataController ;
+        rdfs:label  "Data Controller" .
+
+<did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_155>
+        a           dpv:DataSubject ;
+        rdfs:label  "Data Subject" .
+
+<http://mpeg.org/contractLocationData>
+        a                  mco-core:Contract ;
+        rdfs:label         "CONTRACT Location Data - Data subject policies test" ;
+        mco-core:hasParty  <did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_156> , <did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_155> , <did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_154> .
+
+<http://mpeg.org/permission0>
+        a                       mvco:Permission ;
+        mco-core:implements     <http://mpeg.org/textClause1> ;
+        mco-core:issuedIn       <http://mpeg.org/contractLocationData> ;
+        mvco:issuedBy           <did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_156> ;
+        mco-core:permitsAction  <http://mpeg.org/actionConsult> ;
+        mco-core:hasRequired    <http://mpeg.org/factConsent>.
+
+<http://mpeg.org/latLonXY>
+        a               dpv:PseudoAnonymisedData .
+
+<http://mpeg.org/timestampT>
+        a               dpv:PseudoAnonymisedData .
+
+<http://mpeg.org/locationDataZ>
+        a                       dpv:SensitivePersonalData ;
+        mvco:isMadeUpOf         <http://mpeg.org/latLonXY>, <http://mpeg.org/timestampT> .
+
+<http://mpeg.org/actionConsult>
+        a               dpv:Consult ;
+        mvco:actedBy    <did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_154> ;
+        mvco:actedOver  <http://mpeg.org/locationDataZ> .
+
+<http://mpeg.org/factConsent>
+        a                       dpv:Consent ;
+        dpv:hasDataSubject      <did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_155> ;
+        dpv:hasDataController   <did:nft:eip155:1337_erc721:0x6AE2c4CD7162CA0e0C6D83b682079453A28EA53C_156> ;
+        dpv:hasPurpose          <http://mpeg.org/purpose1>, <http://mpeg.org/purpose2> ;
+        dpv:hasProcessing       <http://mpeg.org/processing1> .
+
+<http://mpeg.org/purpose1>
+        a               dpv:SocialMediaMarketing .
+
+<http://mpeg.org/purpose2>
+        a               dpv:TargetedAdvertising .
+
+<http://mpeg.org/processing1>
+        a               dpv:Consult .
+
+<http://mpeg.org/textClause1>
+        a                  mco-core:TextualClause ;
+        mco-core:text      "Location data read-only policy for Targeted Advertising in Social Media" .
